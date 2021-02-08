@@ -26,6 +26,13 @@ The user must be able to call the mappings with test fixtures.
 - Fixtures could be set up programmatically as a list of Events
 - Fixtures could be loaded from a JSON blob
 
+### As a user I want to stub the state of a contract
+
+Users must also be able to stub the state of a contract, so that if the contract is called certain data is returned.
+
+- Stub contract state programmatically
+- Stub contract state using JSON
+
 ### As a user I want to assert the state of the store
 
 The user should be able to assert the final state of the store in a snapshot-style approach (compare output against expected).
