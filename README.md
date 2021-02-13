@@ -13,7 +13,6 @@ Assertions can be made using a snapshot-style approach.
 Users must be able to hydrate the store with a known state of entities. Ideally both:
 
 - Hydrate state programmatically using Entity objects
-- Hydrate state using a JSON blob
 
 ### As a user I want to call a mapping function with an event
 
@@ -24,14 +23,12 @@ The user must be able to create an event Entity and pass it to a mapping functio
 The user must be able to call the mappings with test fixtures.
 
 - Fixtures could be set up programmatically as a list of Events
-- Fixtures could be loaded from a JSON blob
 
 ### As a user I want to stub the state of a contract
 
 Users must also be able to stub the state of a contract, so that if the contract is called certain data is returned.
 
 - Stub contract state programmatically
-- Stub contract state using JSON
 
 ### As a user I want to assert the state of the store
 
@@ -48,20 +45,25 @@ The user should be able to assert that a subgraph fails in an expected way.
 
 It could be useful to see how fast tests run.  The log output should include test run duration.
 
-## Scaffolding CLI
-
-It would be really nice to be able to generate hydration and fixture data from mainnet, testnets, or a local node. This would make it easy to generate test data from local nodes or testnets.
-
-### As a user I want to generate hydration and fixture data between two blocks from a node
-
-The user would be able to generate a JSON blob of store state for the starting block, and generate fixtures for the subsequent block up until the final block. This could be run against any node; whether local, testnet, or mainnet.
-
 ## Additional Requirements
 
 ### Language
 
-The framework should be written in AssemblyScript or TypeScript.
+The framework should be written in TypeScript.
+
+- Framework should be test runner agnostic
+- Include Chai assertions
 
 ### Performance
 
 The framework should be fast: it should not spin up nodes or child processes.  The framework must stub out the store and test the mappings.
+
+### Test Coverage
+
+The framework should be tested with coverage exceeding 90%
+
+## Scope and Budget
+
+Estimated dev time: 3 weeks
+
+20000 GRT
