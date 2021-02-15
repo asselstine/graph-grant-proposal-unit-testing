@@ -24,15 +24,24 @@ The user must be able to call the mappings with test fixtures.
 
 - Fixtures could be set up programmatically as a list of Events
 
-### As a user I want to stub the state of a contract
+### As a user I want to mock contract calls
 
-Users must also be able to stub the state of a contract, so that if the contract is called certain data is returned.
+Users must be able to mock a contract call:
 
-- Stub contract state programmatically
+```
+const mock = mockContract('0x...'):
+mock.expects('myContractFunction').withArgs(a, b, c).shouldReturn(x)
+```
+
+Users must also be able to mock reverts:
+
+```
+mock.expects('myContractFunction').withArgs(a, b, c).once().reverts()
+```
 
 ### As a user I want to assert the state of the store
 
-The user should be able to assert the final state of the store in a snapshot-style approach (compare output against expected).
+The user should be able to assert the final state of the store in a snapshot-style approach (compare store state against expected).
 
 - Must be able to assert entities
 - Possibly assert entire state of store to assert non-existence as well
