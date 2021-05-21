@@ -58,10 +58,10 @@ It could be useful to see how fast tests run.  The log output should include tes
 
 ### Language
 
-The framework should be written in TypeScript.
+The framework should be written in Rust.
 
-- Framework should be test runner agnostic
-- Include Chai assertions
+- Unit tests themselves will be written in AssemblyScript and compiled to wasm.
+- The framework will be used via CLI.
 
 ### Performance
 
@@ -73,6 +73,4 @@ The framework should be tested with coverage exceeding 90%
 
 ## Scope and Budget
 
-Estimated dev time: 3 weeks
-
-20000 GRT
+N/A
